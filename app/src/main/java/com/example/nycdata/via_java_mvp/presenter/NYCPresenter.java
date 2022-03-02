@@ -18,7 +18,8 @@ import retrofit2.Response;
 
 public class NYCPresenter extends AppCompatActivity implements NYCContractor.NYCPresenterInterface {
    private static NYCMainActivity mainActivity;
-    private Context context;
+   // Unnecessary below. ONly if some additional functionalities and UTIls etc.
+   private Context context;
     public    NYCPresenter(Context context)
     {
         this.context = context;
@@ -30,47 +31,27 @@ public class NYCPresenter extends AppCompatActivity implements NYCContractor.NYC
         regularServiceCall();
         /*val md: NYCDatabase = NYCDatabase.getDatabase(this@NYCPagingSource)
         val mdao: NYCDao = md.movieAbs()
-
         mdao.insert(response)
-
          */
     }
 
     @Override
     public void saveData(Context context) {
-
     }
 
-   static void regularServiceCall() {
-
-       RetroService retroService = RetroInstance.Companion.getRetroInstance().create(RetroService.class);
-       //RetroService   retroService = RetroInstance.getRetroInstance().create(RetroService.class);
+    static void regularServiceCall() {
+        RetroService retroService = RetroInstance.Companion.getRetroInstance().create(RetroService.class);
 
        Call<List<StudentData>> call = retroService.getDataFromNYCAPI();
-
-
-       //    Call<StudentData> call = apiService.getTopRatedMovies();
-
        call.enqueue(new Callback<List<StudentData>>() {
            @Override
            public void onResponse(Call<List<StudentData>> call, Response<List<StudentData>> response) {
-   mainActivity.showDetails(response.body());
-
-            //   Log.i("a", "a");
-
-
-
-
-
+         mainActivity.showDetails(response.body());
 
            }
-
            @Override
            public void onFailure(Call<List<StudentData>> call, Throwable t) {
                Log.i("a", "a");
-
            }
        });
-
-
-   } }
+    } }
