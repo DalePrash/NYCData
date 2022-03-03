@@ -11,13 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nycdata.R;
 
 public class NYCDetailActivity extends AppCompatActivity {
-
      RecyclerView recyclerView;
      TextView dbn;
      TextView schoolName;
      TextView sat;
-
-
      void  toolb() {
           Toolbar toolbar = (Toolbar)findViewById(R.id.toolbarMenuDetail);
           toolbar.setTitle("NYC   DETAIL");
