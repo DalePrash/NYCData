@@ -25,7 +25,6 @@
         </activity>
         <activity android:name=".via_java_mvp.view.NYCDetailActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            >
             <intent-filter>
                 <action android:name="detail_activity" />
                 <category android:name="android.intent.category.DEFAULT" />
